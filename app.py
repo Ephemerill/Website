@@ -1,6 +1,6 @@
 from flask import Flask
 
-app = Flask(__Scraper__)
+app = Flask(__app__)
 
 @app.route('/')
 def home():
