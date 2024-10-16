@@ -3,57 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display JSON</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Menu Scraper</title>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">JSON Data Display</h1>
-        <div id="jsonDisplay" class="row mt-4"></div>
-    </div>
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Script to fetch and display JSON data -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Example JSON object (this would usually be fetched from an external file)
-            const jsonData = [
-                {
-                    "name": "John Doe",
-                    "age": 28,
-                    "email": "john@example.com"
-                },
-                {
-                    "name": "Jane Smith",
-                    "age": 32,
-                    "email": "jane@example.com"
-                }
-            ];
-
-            // Function to display JSON data in a Bootstrap card format
-            function displayJSONData(data) {
-                const jsonDisplay = document.getElementById('jsonDisplay');
-                data.forEach(item => {
-                    const card = document.createElement('div');
-                    card.classList.add('col-md-4');
-                    card.innerHTML = `
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <h5 class="card-title">${item.name}</h5>
-                                <p class="card-text">Age: ${item.age}</p>
-                                <p class="card-text">Email: ${item.email}</p>
-                            </div>
-                        </div>
-                    `;
-                    jsonDisplay.appendChild(card);
-                });
-            }
-
-            // Call the function to display the JSON data
-            displayJSONData(jsonData);
-        });
-    </script>
+    <h1>Welcome to the Menu Scraper</h1>
+    <a href="{{ url_for('scrape') }}">Scrape Menu</a>
 </body>
 </html>
