@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Results</title>
+</head>
+<body>
+    <h1>Menu Results</h1>
+
+    <h2>Breakfast</h2>
+    {% for item in menu.breakfast %}
+        <h3>{{ item.name }}</h3>
+        <ul>
+            {% for option in item.options %}
+                <li>{{ option }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <h2>Lunch</h2>
+    {% for item in menu.lunch %}
+        <h3>{{ item.name }}</h3>
+        <ul>
+            {% for option in item.options %}
+                <li>{{ option }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <h2>Dinner</h2>
+    {% for item in menu.dinner %}
+        <h3>{{ item.name }}</h3>
+        <ul>
+            {% for option in item.options %}
+                <li>{{ option }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</body>
+</html>
